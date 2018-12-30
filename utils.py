@@ -28,19 +28,19 @@ def bash(command):
 
 
 def run_burrow_validity():
-    bash("/home/phoenix/go/src/github.com/hyperledger/burrow/bin/"
+    bash("/usr/local/bin/"
          "burrow deploy --address {} "
          "-f alice_store_validate.yaml".format(ACCOUNT['address']))
 
 
 def run_burrow_integrity():
-    bash("/home/phoenix/go/src/github.com/hyperledger/burrow/bin/"
+    bash("/usr/local/bin/"
          "burrow deploy --address {} "
          "-f alice_store_integrity.yaml".format(ACCOUNT['address']))
 
 
 def run_burrow_store():
-    bash("/home/phoenix/go/src/github.com/hyperledger/burrow/bin/"
+    bash("/usr/local/bin/"
          "burrow deploy --address {} "
          "-f alice_store.yaml".format(ACCOUNT['address']))
 
