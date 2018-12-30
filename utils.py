@@ -6,7 +6,7 @@ import redis
 
 ACCOUNT = {'name': 'Oliver',
            'budget': 540,
-           'address': 'D37079FDF648FE03CB7261941109055DC7261236'}
+           'address': '557B709A0C8009FCC15CA8E8546482496F2F60B2'}
 
 HAMSTERS = [{'id': 0, 'data':
                       {'name': 'Andalusian Ham', 'price': 150, 'amount': 4}},
@@ -35,14 +35,14 @@ def run_burrow_validity():
 
 def run_burrow_integrity():
     bash("/home/phoenix/go/src/github.com/hyperledger/burrow/bin/"
-         "burrow deploy --address EDFA0114FDF6614E17168606235A794614037EDF "
-         "-f alice_store_integrity.yaml")
+         "burrow deploy --address {} "
+         "-f alice_store_integrity.yaml".format(ACCOUNT['address']))
 
 
 def run_burrow_store():
     bash("/home/phoenix/go/src/github.com/hyperledger/burrow/bin/"
-         "burrow deploy --address EDFA0114FDF6614E17168606235A794614037EDF "
-         "-f alice_store.yaml")
+         "burrow deploy --address {} "
+         "-f alice_store.yaml".format(ACCOUNT['address']))
 
 
 def read_chain_value(key, file):
