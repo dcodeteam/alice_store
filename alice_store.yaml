@@ -1,0 +1,7 @@
+jobs:
+- call:
+    data:
+    - '{"id": 4, "data": {"name": "Mexican Ham", "price": 350, "amount": 3}}'
+    destination: 15689BB829CB79ED7C392191445B385FE4696A5B
+    function: reg_hams
+  name: storeHams

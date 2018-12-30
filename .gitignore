@@ -1,0 +1,18 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### PyCharm ###
+__pycache__/
+*.py[cod]
+
+### Virtualenv ###
+ENV
+
+
+### System ###
+nohup.out
+celerybeat-schedule
+

@@ -1,0 +1,6 @@
+jobs:
+
+- name: checkHams
+  call:
+      destination: 15689BB829CB79ED7C392191445B385FE4696A5B
+      function: get_hashes

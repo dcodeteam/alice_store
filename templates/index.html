@@ -1,0 +1,101 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"
+                   href="{{ url_for('index') }}">AliceStore</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="sync" href="#"><span
+                        class="glyphicon glyphicon-cloud"></span> Chain
+                    Synchronize</a></li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div id="message"></div>
+    <div class="row">
+        {% for k in data %}
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        {{ k.data['name'] }} <span class="badge">New</span>
+                    </div>
+                    <input type="hidden" value="{{ k.data['name'] }}"
+                           id="ham_name_{{ k.id }}">
+                    <div class="panel-body">
+                        <ul>
+                            <li>Price: {{ k.data['price'] }}$</li>
+                            <li>Amount: {{ k.data['amount'] }}</li>
+                        </ul>
+                        <button id="valid_{{ k.id }}" type="button"
+                                class="valid_ham btn btn-default">Validate
+                        </button>
+                        <button id="edit_{{ k.id }}" type="button"
+                                class="edit_ham btn btn-default"
+                                data-toggle="modal"
+                                data-target="modal_{{ k.id }}">Edit
+                        </button>
+                        <button id="del_{{ k.id }}" type="button"
+                                class="del_ham btn btn-danger">Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">Edit the ham</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                      <label for="price">Name:</label>
+                      <input type="text" class="form-control" id="price">
+                    </div>
+                    <div class="form-group">
+                      <label for="amount">Name:</label>
+                      <input type="text" class="form-control" id="amount">
+                    </div>
+                    <input id="ham_id" type="hidden" value="" name="ham_id"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">Close
+                    </button>
+                    <button id="save_ham" type="button" class="btn btn-info">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ bootstrap_find_resource('jquery.js', cdn='jquery') }}"></script>
+    <script src="{{ bootstrap_find_resource('js/bootstrap.js', cdn='bootstrap') }}"></script>
+    <script src="{{ url_for('.static', filename='alice_scripts.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,7 @@
+jobs:
+- call:
+    data:
+    - '{"id": 1, "data": {"name": "Sicilian Ham", "price": 200, "amount": 3}}'
+    destination: 15689BB829CB79ED7C392191445B385FE4696A5B
+    function: vld_hams
+  name: validHams
