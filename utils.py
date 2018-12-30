@@ -6,7 +6,7 @@ import redis
 
 ACCOUNT = {'name': 'Oliver',
            'budget': 540,
-           'address': '557B709A0C8009FCC15CA8E8546482496F2F60B2'}
+           'address': 'C53497E8B1708259F3768E677D7405F7673B52B5'}
 
 HAMSTERS = [{'id': 0, 'data':
                       {'name': 'Andalusian Ham', 'price': 150, 'amount': 4}},
