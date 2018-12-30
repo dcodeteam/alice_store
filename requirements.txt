@@ -5,5 +5,5 @@ python-dateutil==2.7.3
 eventlet==0.24.1
 gunicorn==19.9.0
 uwsgi==2.0.17.1
-flask-bootstrap=3.3.7.1
-pyyaml=3.13
+flask-bootstrap==3.3.7.1
+pyyaml==3.13
