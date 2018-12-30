@@ -6,7 +6,7 @@ import redis
 
 ACCOUNT = {'name': 'Oliver',
            'budget': 540,
-           'address': 'DF89A73034FDC1BF105806847466D0D204F2F687'}
+           'address': 'D37079FDF648FE03CB7261941109055DC7261236'}
 
 HAMSTERS = [{'id': 0, 'data':
                       {'name': 'Andalusian Ham', 'price': 150, 'amount': 4}},
@@ -29,8 +29,8 @@ def bash(command):
 
 def run_burrow_validity():
     bash("/home/phoenix/go/src/github.com/hyperledger/burrow/bin/"
-         "burrow deploy --address EDFA0114FDF6614E17168606235A794614037EDF "
-         "-f alice_store_validate.yaml")
+         "burrow deploy --address {} "
+         "-f alice_store_validate.yaml".format(ACCOUNT['address']))
 
 
 def run_burrow_integrity():

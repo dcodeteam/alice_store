@@ -15,7 +15,6 @@ PAGE_LIMIT = 5
 
 @app.route('/')
 def index():
-    #utils.register_hams_in_chain()
     hams = cache.lrange('ham_list', 0, -1)
     ham_data = []
     for ham_id in hams:
