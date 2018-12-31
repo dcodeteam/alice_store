@@ -64,15 +64,15 @@ burrow deploy --address C53497E8B1708259F3768E677D7405F7673B52B5 -f alice_store_
 Here an address is the address of the chain validator, it can be found in **burrow.toml** file in chain config directories.
 The file description can be found here: https://github.com/hyperledger/burrow/blob/develop/docs/quickstart/single-full-node.md#configure-burrow
 
-After deploying the contract, it will be labeled an address, contract address, save it since it'll be used in the our script.
+After deploying the contract, it will be labeled an address, contract address, save it since it'll be used in our script.
 
-## What the script performing
+## What the script is performing
 Alice store, in the demo, has **five** unique pets(hams). Each ham can be edited, deleted and validated.
 
-On the top-right corner of the page you will notice **Chain Synchronize** button which is intended to perform data integrity check within Hyperledger Burrow chain.
-For now it checks for the data existence only rather then data structure.
+On the top-right corner of the page you will notice **Chain Synchronize** button which is intended to perform data integrity check within Hyperledger Burrow ledger.
+For now it checks for the data existence only rather then data structure. If some ham data is deleted the system will failure.
 
-If we try to manipulate with any data by editing or deleting them it will lead to data structure failure of the store by meaning that unauthorized operation has been done.
+If we try to manipulate with any data by editing or deleting them it will lead to data structure failure of the store by meaning that unauthorized operation has been occured.
 
 The project contains three YAML files:
  - alice_store.yaml
