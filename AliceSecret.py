@@ -7,13 +7,13 @@ from flask_bootstrap import Bootstrap
 
 import utils
 
-app = Flask(__name__, root_path='/burrow/demo')
+app = Flask(__name__)
 bootstrap = Bootstrap(app)
 cache = utils.rds
 PAGE_LIMIT = 5
 
 
-@app.route('/')
+@app.route('/burrow/demo/')
 def index():
     hams = cache.lrange('ham_list', 0, -1)
     ham_data = []
@@ -27,7 +27,7 @@ def index():
     return render_template('index.html', data=ham_data)
 
 
-@app.route('/info/<ham_id>')
+@app.route('/burrow/demo/info/<ham_id>')
 def info_ham(ham_id):
     ham_info = cache.get(ham_id)
     if ham_info:
@@ -37,7 +37,7 @@ def info_ham(ham_id):
     return flask.jsonify(ham_info)
 
 
-@app.route('/delete/<ham_id>')
+@app.route('/burrow/demo/delete/<ham_id>')
 def delete_ham(ham_id):
     cache.delete(ham_id)
     cache.lrem('ham_list', 0, ham_id)
@@ -45,7 +45,7 @@ def delete_ham(ham_id):
     return flask.jsonify(ctx)
 
 
-@app.route('/update/<ham_id>', methods=['POST'])
+@app.route('/burrow/demo/update/<ham_id>', methods=['POST'])
 def update_ham(ham_id):
     jsn_ham = flask.request.get_json()
     cache.set(ham_id, jsn_ham)
@@ -54,7 +54,7 @@ def update_ham(ham_id):
     return flask.jsonify(ctx)
 
 
-@app.route('/validate/<ham_id>')
+@app.route('/burrow/demo/validate/<ham_id>')
 def validate_ham(ham_id):
     ham_data = cache.get(ham_id)
     ham_data = ham_data.decode('utf-8') if ham_data else None
@@ -85,7 +85,7 @@ def validate_ham(ham_id):
     return flask.jsonify({'is_valid': is_vld})
 
 
-@app.route('/check/data')
+@app.route('/burrow/demo/check/data')
 def check_hams_integrity():
     """Run for blockchain check data hash integrity"""
     utils.run_burrow_integrity()
