@@ -89,8 +89,9 @@ Then run the Flask:
 ```
 python AliceStore.py
 ```
-
 In the demo page Mexican Ham has been changed, if you click to Validate button it should wanr you that data is not identical with the ledger stored one
+
+![alt Alice store demo](https://github.com/dcodeteam/alice_store/raw/master/screendemo.png)
 
 ## TODO
  - Planning to check for within the chain per data.
