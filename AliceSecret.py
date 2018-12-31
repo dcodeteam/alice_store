@@ -7,7 +7,7 @@ from flask_bootstrap import Bootstrap
 
 import utils
 
-app = Flask(__name__)
+app = Flask(__name__, root_path='/burrow/demo')
 bootstrap = Bootstrap(app)
 cache = utils.rds
 PAGE_LIMIT = 5

@@ -35,3 +35,5 @@ If the current data structure or values altered, the integrity will be faild.
 
 The example demonstrates some pet store, named after Alice, that hosts exotic hamsters collection.
 An owner of the store should be highly confident that all hamters in place and no one tried to customize their info.
+
+## Deploy contract
