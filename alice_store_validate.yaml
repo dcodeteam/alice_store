@@ -2,6 +2,6 @@ jobs:
 - call:
     data:
     - '{"id": 1, "data": {"name": "Sicilian Ham", "price": 200, "amount": 3}}'
-    destination: 557B709A0C8009FCC15CA8E8546482496F2F60B2
+    destination: 870B310141AFABC3300C9E83BC1CA00384D8D642
     function: vld_hams
   name: validHams

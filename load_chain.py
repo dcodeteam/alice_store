@@ -14,7 +14,7 @@ def register_hams_in_chain():
                 [{'name': 'storeHams',
                   'call':
                       {
-                          'destination': '557B709A0C8009FCC15CA8E8546482496F2F60B2',
+                          'destination': '870B310141AFABC3300C9E83BC1CA00384D8D642',
                           'function': 'reg_hams',
                           'data': [json.dumps(ham)]
                           }
