@@ -13,7 +13,7 @@ cache = utils.rds
 PAGE_LIMIT = 5
 
 
-@app.route('/burrow/demo/')
+@app.route('/burrow/demo')
 def index():
     hams = cache.lrange('ham_list', 0, -1)
     ham_data = []
