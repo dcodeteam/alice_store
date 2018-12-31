@@ -28,13 +28,13 @@ burrow start --validator-index=0
 
 In this example we run a single node blockchain, but the example can be run on multi-node chains.
 
-The goal is to make a data storage to gurrant their integrity. Hyperledger Burrow is going to help to achive this case.
-A hash value of the data is being generated and stored in the chain.
+The goal is to make a data storage to secure its integrity. Hyperledger Burrow is going to help to achive this scenario.
+A hash value of the data is being generated and stored in the ledger(blockchain).
 
-If the current data structure or values altered, the integrity will be faild.
+If the current data structure or values altered, the integrity will be broken.
 
-The example demonstrates some pet store, named after Alice, that hosts exotic hamsters collection.
-An owner of the store should be highly confident that all hamters in place and no one tried to customize their info.
+A demo example demonstrates some pet store, named after Alice, that hosts exotic hamsters collection.
+An owner of the store should be highly confident that all hamsters data in place and no one tried to customize their data info.
 
 ## Deploy contract
 Chain contract located in the project root path _alicestore.sol_.
