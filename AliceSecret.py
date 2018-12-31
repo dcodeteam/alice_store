@@ -66,7 +66,7 @@ def validate_ham(ham_id):
             'jobs':
                 [{'name': 'validHams',
                   'call':
-                    {'destination': '557B709A0C8009FCC15CA8E8546482496F2F60B2',
+                    {'destination': '65391DA72F6EF092C9494C9C75729B8BE1A68E10',
                      'function': 'vld_hams',
                      'data': [json.dumps(ham_data)]
                      }
